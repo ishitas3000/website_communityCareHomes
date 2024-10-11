@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @font-face {
+      font-family:'dmReg';
+        src: url('DMSans_18pt-Light.ttf');
+    }
+    @font-face {
+      font-family:'dmEB';
+        src: url('DMSans_18pt-ExtraBold.ttf');
+    }
+    @font-face {
+      font-family:'workReg';
+        src: url('WorkSans-Light.ttf');
+    }
+    @font-face {
+      font-family:'workEB';
+        src: url('WorkSans-ExtraBold.ttf');
+    }
+    .column {
+      float: left;
+    }
+   .columnright {
+    float: right;
+    }
+    .row:after {
+      overflow: hidden;
+      top: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      display:table-cell;
+    }
+    .toc {
+      position:relative;
+      background: none;
+      border-radius: 15px;
+      color: black;
+      border: none;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    .toc::after {
+      content: "";
+      position:relative;
+      z-index: -0.5;
+      opacity: 0;
+      background: none;
+      border-radius: 15px;
+      color: black;
+      border: none;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      
+    }
+
+    .toc:hover {
+      background-image: linear-gradient(45deg, #5F79EB, #47D186);
+      border-radius: 15px;
+      color: white;
+      border: none;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      
+    }
+    .toc:hover::after {
+        opacity: 1;
+    }
+
+    .white-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .column1 h1, p {
+      margin: 0;
+    }
+
+    .navbar {
+      position: fixed;
+      width: calc(100% - 15px);
+      top: 0;
+      left: 50%;
+      border-bottom: 5px solid black;
+      transform: translateX(-50%);
+      background-color: white; 
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .box {
+        position: relative;
+        background-image: linear-gradient(45deg, #5F79EB, #47D186);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .box::after {
+        content: "";
+        position:relative;
+        z-index: -0.5;
+        opacity: 0;
+        border: none;
+        border-radius: 25px;
+       background-image: linear-gradient(45deg, #5F79EB, #47D186);
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .box:hover {
+        transform: scale(1.05, 1.05);
+        border-radius: 25px;
+        border: none;
+        background-image: linear-gradient(45deg, #5F79EB, #47D186);
+        color: #ffff;
+        box-shadow: 4px 2px 12px 1px rgba(0,0,0,0.3)
+    }
+    
+
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CommunityCare Homes</title>
+  <link rel="icon" type="image/x-icon" href="cclogo.png">
+</head>
+
+<body>
+  <!--- navigation bar -->
+  <div class="row navbar" position="fixed">
+    <div class="column">
+      <table>
+        <tr>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/">
+              <img width="40px" src="cclogo.png">
+            </a>
+          </td>
+          <td style="padding-left: 8px;">
+            <a href="https://community-care-homes.ishi3000.repl.co/" style="text-decoration: none;">
+              <h1 style="font-family:dmReg; color: black; font-size: 20px;"><strong><span style="text-decoration: none; padding: 3px; padding-right: 5px; padding-left: 5px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">CommunityCare</span> Home</strong></h1>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div class="columnright">
+      <table>
+        <tr>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">Home</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/services.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Services</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/facility.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Facility</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/about.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">About</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/contact.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Contact</h1></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  <!-- first division section for welcome page for the introduction of who we are -->
+  <div width="100%" style="background-image: linear-gradient(180deg, #5F79EB, #47D186); padding: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 25px;">
+    <div width="100%">
+      <table width="100%" style="padding: 10px;">
+        <tr style="">
+          <td class="column1" width="45%" height="100%" style="flex: 1; background-color: white; border-radius: 25px; padding: 30px;">
+            <h1 style="font-family: dmEB; line-height: 1.5;"><strong>Welcome to the <br><span style="padding: 3px; padding-right: 8px; padding-left: 8px;background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 25px; color: white; border: none;">CommunityCare</span> Home!</strong>
+            </h1>
+            <br>
+            <p style="font-family: WorkReg;"><strong>We are a long term residential community home that provides residential, medical, psychiatric, and therapeutic care services to all our welcomed residents.</strong>
+            </p>
+          </td>
+          <td width="50%" style="flex: 1; padding-left: 60px;">
+            <img width="100%" src="Long-Term Care Banner.jpg" style="border-radius: 25px; overflow: hidden background-size: cover; background-position: center center;">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- second division segement for users to be sent to services page -->
+  <div >
+    <table width="100%" style="padding-top: 40px; padding-bottom: 80px; padding-right: 80px; padding-left: 80px;">
+      <tr width="100%">
+        <td width="50%">
+          <h1 style="font-family: dmEB; line-height: 1.5;"><strong>Are You <span style="padding: 3px; padding-right: 8px; padding-left: 8px;background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 25px; color: white; border: none;">Eligible</span><br> To Apply to Our Home?</strong>
+          </h1>
+        </td>
+        <td width="50%">
+          <p style="font-family: WorkReg;"><strong>Check out our eligibility guidelines to see if you are fit to apply to our care home!</strong>
+          </p>
+          <br>
+          <a href="https://community-care-homes.ishi3000.repl.co/services.html"><button type="button" class="box" style="font-family:WorkReg; font-size:17px; padding: 10px;"><strong>Check Your Eligibility</strong></button></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!--
+  footer section for logo, name, address, and contact
+  -->
+  <div>
+    <br>
+    <br>
+    <center>
+      <table>
+        <tr>
+          <td>
+            <img width="40px" src="cclogo.png">
+          </td>
+          <td style="padding-left: 5px;">
+            <h1 style="font-family:dmReg; color: #black; font-size: 20px;"><strong><span style="padding: 3px; padding-right: 5px; padding-left: 5px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">CommunityCare</span> Home</strong></h1>
+          </td>
+        </tr>
+      </table>
+      <h1 style="font-family:WorkReg; font-size:10px; color:#00000;">©2023 by CommunityCare Home. <br>Proudly a Residential Home Care Service located in Brampton.</h1>
+    </center>
+    <br>
+    
+  </div>
+
+  <!--
+  chatbot for customer interactions
+  -->
+  <script src="//code.tidio.co/uobckb2m8do28deydo7dgevmrigm49al.js" async></script>
+
+  <div>
+    <a href="https://community-care-homes.ishi3000.repl.co/apply.html"><button type="button" class="box" style="font-family:WorkEB; font-size:17px; padding: 10px; background-image: none; background-color: white; box-shadow: 4px 2px 12px 1px rgba(0,0,0,0.3); position: fixed; bottom:45px; left:35px; color: #5F79EB;" ><strong>Apply Now</strong></button>
+    </a>
+  </div>
+  
+</body>
+
+</html>

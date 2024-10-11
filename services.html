@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @font-face {
+      font-family:'dmReg';
+        src: url('DMSans_18pt-Light.ttf');
+    }
+    @font-face {
+      font-family:'dmEB';
+        src: url('DMSans_18pt-ExtraBold.ttf');
+    }
+    @font-face {
+      font-family:'workReg';
+        src: url('WorkSans-Light.ttf');
+    }
+    @font-face {
+      font-family:'workEB';
+        src: url('WorkSans-ExtraBold.ttf');
+    }
+    @font-face {
+      font-family:'workB';
+        src: url('WorkSans-Bold.ttf');
+    }
+    .column {
+      float: left;
+    }
+   .columnright {
+    float: right;
+    }
+    .row:after {
+      overflow: hidden;
+      top: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      display:table-cell;
+    }
+    .navbar {
+      position: fixed;
+      width: calc(100% - 15px);
+      top: 0;
+      left: 50%;
+      border-bottom: 5px solid black;
+      transform: translateX(-50%);
+      background-color: white; 
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .toc {
+      position:relative;
+      background: none;
+      border-radius: 15px;
+      color: black;
+      border: none;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    .toc::after {
+      content: "";
+      position:relative;
+      z-index: -0.5;
+      opacity: 0;
+      background: none;
+      border-radius: 15px;
+      color: black;
+      border: none;
+      padding-top: 7px;
+      padding-bottom: 7px;
+
+    }
+
+    .toc:hover {
+      background-image: linear-gradient(45deg, #5F79EB, #47D186);
+      border-radius: 15px;
+      color: white;
+      border: none;
+      padding-top: 7px;
+      padding-bottom: 7px;
+
+    }
+    .toc:hover::after {
+        opacity: 1;
+    }
+
+    .white-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .column1 h1, p {
+      margin: 0;
+    }
+
+    .box {
+        position: relative;
+        background-image: linear-gradient(45deg, #5F79EB, #47D186);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .box::after {
+        content: "";
+        position:relative;
+        z-index: -0.5;
+        opacity: 0;
+        border: none;
+        border-radius: 25px;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .box:hover {
+        transform: scale(1.05, 1.05);
+        border-radius: 25px;
+        border: none;
+        color: #ffff;
+        box-shadow: 4px 2px 12px 1px rgba(0,0,0,0.3)
+    }
+
+
+
+    th, td {
+      overflow: hidden;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      background: white;
+      border-radius: 32.5px;
+      color: black;
+      transition: all 0.2s ease-in-out;
+      column-gap: 35px;
+      row-gap: 35px;
+      vertical-align: middle;     
+    }
+    .grid-item {
+      background-color: white;
+      border-color: black;
+      border-radius: 25px;
+      color: black;
+      padding: 20px;
+      vertical-align: middle;
+      text-align: center;
+      border: double 7px transparent;
+      border-radius: 32.5px;
+      background-image: linear-gradient(white, white), linear-gradient(45deg, #5F79EB, #47D186);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .grid-item:hover {
+      transform: scale(1.05, 1.05);
+      background-color: white;
+      color: black;
+    }
+
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommunityCare Homes</title>
+    <link rel="icon" type="image/x-icon" href="cclogo.png">
+  </head>
+
+  <body>
+    <!--- navigation bar -->
+    <div class="row navbar" position="fixed">
+      <div class="column">
+        <table>
+          <tr>
+            <td>
+              <a href="https://community-care-homes.ishi3000.repl.co/">
+                <img width="40px" src="cclogo.png">
+              </a>
+            </td>
+            <td style="padding-left: 8px;">
+              <a href="https://community-care-homes.ishi3000.repl.co/" style="text-decoration: none;">
+                <h1 style="font-family:dmReg; color: black; font-size: 20px;"><strong><span style="text-decoration: none; padding: 3px; padding-right: 5px; padding-left: 5px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">CommunityCare</span> Home</strong></h1>
+              </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="columnright">
+      <table>
+        <tr>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Home</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/services.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">Services</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/facility.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Facility</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/about.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">About</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/contact.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Contact</h1></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+    
+
+    <!-- first division segement for description of all services offered -->
+    <div width="100%" style="padding-right: 60px; padding-left: 60px; padding-top: 10px;">
+      <center>
+        <br>
+        <br>    
+        <h1 style="font-family: dmEB; line-height: 1.5; font-size: 45px;">Our <strong><span style="padding: 3px; padding-right: 8px; padding-left: 8px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 50px; color: white; border: none;">Services</span></strong></h1>
+      </center>
+          <div class="grid-container">
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Housing</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Private apartments of rooms or suites with varying levels of size and amenities.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Daily Meals</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Regularly scheduled nutritious meals served in communal dining areas.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Security</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Secure entry systems technology, often reinforced by 24-hour security personnel.</strong></p>
+            </div>  
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Emergency Response</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Call buttons, emergency alert systems, or other means for residents to call for help.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Housekeeping</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Regular cleaning services (3 times a week) for individual living spaces.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>24 Hour Assistance</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Trained staff available around the clock for emergencies or assistance.</strong></p>
+            </div>  
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Medical Services</strong></h1>
+            <p style="font-family: WorkReg;"><strong>Access to medical professionals or healthcare services on-site or through partnerships.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Assisted Care</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Assistance with activities of daily living (ADLs) such as bathing, dressing, and medication management.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Memory Care</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Specialized care for individuals with Alzheimer's or other forms of dementia.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Wellness Programs</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Fitness classes, wellness checks, and health-related activities.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Social Activities</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Organized social events, outings, and recreational activities.</strong></p>
+            </div>  
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Religious Services</strong></h1>
+              <p style="font-family: WorkReg;"><strong>On-site praying rooms for religious services.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Tech Assistance</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Support for residents using computers, tablets, or other electronic devices.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Educational Programs</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Classes or seminars on various topics to stimulate intellectual engagement.</strong></p>
+            </div>
+            <div class="grid-item">
+              <h1 style="font-family: dmEB;"><strong>Pet-Friendly Services</strong></h1>
+              <p style="font-family: WorkReg;"><strong>Pet-friendly policies and facilities for residents with pets.</strong></p>
+            </div>
+          </div>
+    </div>
+
+
+  <!-- second division section to see if user is eligible to apply for residency -->
+  <div width="100%" style="padding: 60px;">
+  <div width="100%" style="background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 32.5px; padding: 0.01px;">
+      <table width="100%" style="padding: 10px;">
+        <tr style="">
+          <td class="column1" width="100%" height="100%" style="flex: 1; background-color: white; border-radius: 25px; padding: 30px;">
+            <h1 style="font-family: dmEB; line-height: 1.5;"><strong>Are You <span style="padding: 3px; padding-right: 8px; padding-left: 8px;background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 25px; color: white; border: none;">Eligible</span><br> To Apply to Our Home?</strong>
+            </h1>
+            <br>
+            <p style="font-family: WorkReg;"><strong>Use the following set of guidelines to determine if you are eligible to apply to be a resident in our home care.</strong>
+            </p>
+            <br>
+            <ol style="font-family: WorkReg; line-height: 2;">
+              <li>
+                <strong><span style="font-family: WorkEB; color: #5F79EB;">Age Requirement: </span>I am at least 65 years of age.</strong>
+              </li>
+              <li>
+                <strong><span style="font-family: WorkEB; color: #5F79EB;">Residency Status: </span>I am a resident in Brampton.</strong>
+              </li>
+              <li>
+                <strong><span style="font-family: WorkEB; color: #5F79EB;">Assistance Needs: </span>I may require assistance with daily activities such as bathing, dressing, or medication management.</strong>
+              </li>
+              <li>
+                <strong><span style="font-family: WorkEB; color: #5F79EB;">Legal Capacity: </span>I have the legal capacity to make decisions regarding my residence.</strong>
+              </li>
+              <li>
+                <strong><span style="font-family: WorkEB; color: #5F79EB;">Documental Proofs: </span>I have access to the following necessary documents:</strong>
+              </li>
+              <ul>
+                <li>
+                  <strong>Passport</strong>
+                </li>
+                <li>
+                  <strong>Proof of past income (Payroll or T4 statement)</strong>
+                </li>
+                <li>
+                  <strong>Medical record (if any medical condition exists)</strong>
+                </li>
+              </ul>
+              </bsdiyans>
+              <li>
+                <strong><span style="font-family: WorkEB; color: #5F79EB;">Family Contact: </span>I have contacts of at least two family members, including the following: </strong>
+              </li>
+              <ul>
+                <li>
+                  <strong>First and Last Name</strong>
+                </li>
+                <li>
+                  <strong>Phone Number</strong>
+                </li>
+                <li>
+                  <strong>Email</strong>
+                </li>
+                <li>
+                  <strong>Adress</strong>
+                </li>
+                <li>
+                  <strong>Current Employment</strong>
+                </li>
+              </ul>
+              <li>
+                <strong><span style="font-family: WorkEB; color: #5F79EB;">Legal Residency Status: </span>I am willing to satisfy the legal residency status required by the facility.</strong>
+              </li>
+            </ol>
+            <br>
+            <p style="font-family: WorkReg;"><strong>If you are able to satisfy all seven guidelines, you are eligible to become one of our welcomed residents!</strong>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+    <!-- third division segement for users to be sent to services page -->
+    <div >
+      <table width="100%" style="padding-top: 10px; padding-bottom: 80px; padding-right: 80px; padding-left: 80px;">
+        <tr width="100%">
+          <td width="50%">
+            <h1 style="font-family: dmEB; line-height: 1.5;"><strong><span style="padding: 3px; padding-right: 8px; padding-left: 8px;background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 25px; color: white; border: none;">Apply</span> to Our Home!</strong>
+            </h1>
+          </td>
+          <td width="50%">
+            <p style="font-family: WorkReg;"><strong>Ready to join our care home community? Click here to start your application now and embark on a journey of comfort, care, and support!</strong>
+            </p>
+            <br>
+            <a href="https://community-care-homes.ishi3000.repl.co/apply.html"><button type="button" class="box" style="font-family:WorkReg; font-size:17px; padding: 10px;"><strong>Apply Now</strong></button></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+
+    
+
+  <!--
+  footer section for logo, name, address, and contact
+  -->
+  <div>
+    <br>
+    <br>
+    <center>
+      <table>
+        <tr>
+          <td>
+            <img width="40px" src="cclogo.png">
+          </td>
+          <td style="padding-left: 5px;">
+            <h1 style="font-family:dmReg; color: #black; font-size: 20px;"><strong><span style="padding: 3px; padding-right: 5px; padding-left: 5px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">CommunityCare</span> Home</strong></h1>
+          </td>
+        </tr>
+      </table>
+      <h1 style="font-family:WorkReg; font-size:10px; color:#00000;">©2023 by CommunityCare Home. <br>Proudly a Residential Home Care Service located in Brampton.</h1>
+    </center>
+    <br>
+
+  </div>    
+
+  <!--
+  chatbot for customer interactions
+  -->
+  <script src="//code.tidio.co/uobckb2m8do28deydo7dgevmrigm49al.js" async></script>
+
+    <div>
+      <a href="https://community-care-homes.ishi3000.repl.co/apply.html"><button type="button" class="box" style="font-family:WorkEB; font-size:17px; padding: 10px; background-image: none; background-color: white; box-shadow: 4px 2px 12px 1px rgba(0,0,0,0.3); position: fixed; bottom:45px; left:35px; color: #5F79EB;" ><strong>Apply Now</strong></button>
+      </a>
+    </div>
+
+</body>
+
+</html>

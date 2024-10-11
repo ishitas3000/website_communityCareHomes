@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @font-face {
+        font-family:'dmReg';
+          src: url('DMSans_18pt-Light.ttf');
+      }
+      @font-face {
+        font-family:'dmEB';
+          src: url('DMSans_18pt-ExtraBold.ttf');
+      }
+      @font-face {
+        font-family:'dmT';
+          src: url('DMSans_18pt-Thin.ttf');
+      }
+      @font-face {
+        font-family:'workReg';
+          src: url('WorkSans-Light.ttf');
+      }
+      @font-face {
+        font-family:'workEB';
+          src: url('WorkSans-ExtraBold.ttf');
+      }
+      @font-face {
+        font-family:'workB';
+          src: url('WorkSans-Bold.ttf');
+      }
+      .column {
+        float: left;
+      }
+     .columnright {
+      float: right;
+      }
+      .row:after {
+        overflow: hidden;
+        top: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        display:table-cell;
+      }
+      .navbar {
+        position: fixed;
+        width: calc(100% - 15px);
+        top: 0;
+        left: 50%;
+        border-bottom: 5px solid black;
+        transform: translateX(-50%);
+        background-color: white; 
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .toc {
+        position:relative;
+        background: none;
+        border-radius: 15px;
+        color: black;
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+
+      .toc::after {
+        content: "";
+        position:relative;
+        z-index: -0.5;
+        opacity: 0;
+        background: none;
+        border-radius: 15px;
+        color: black;
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+
+      }
+
+      .toc:hover {
+        background-image: linear-gradient(45deg, #5F79EB, #47D186);
+        border-radius: 15px;
+        color: white;
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+
+      }
+      .toc:hover::after {
+          opacity: 1;
+      }
+
+      .white-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      .column1 h1, p {
+        margin: 0;
+      }
+
+      .box {
+          position: relative;
+          background-image: linear-gradient(45deg, #5F79EB, #47D186);
+          color: white;
+          border: none;
+          border-radius: 25px;
+          transition: all 0.5s ease-in-out;
+      }
+
+      .box::after {
+          content: "";
+          position:relative;
+          z-index: -0.5;
+          opacity: 0;
+          border: none;
+          border-radius: 25px;
+         background-image: linear-gradient(45deg, #5F79EB, #47D186);
+          transition: opacity 0.5s ease-in-out;
+      }
+
+      .box:hover {
+          transform: scale(1.05, 1.05);
+          border-radius: 25px;
+          border: none;
+          background-image: linear-gradient(45deg, #5F79EB, #47D186);
+          color: #ffff;
+          box-shadow: 4px 2px 10px 0.5px rgba(120, 110, 132, 0.3)
+      }
+      ::placeholder {
+        color: #C1C1C1;
+      }
+
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommunityCare Homes</title>
+    <link rel="icon" type="image/x-icon" href="cclogo.png">
+  </head>
+
+  <body>
+    <!--- navigation bar -->
+    <div class="row navbar" position="fixed">
+      <div class="column">
+        <table>
+          <tr>
+            <td>
+                <a href="https://community-care-homes.ishi3000.repl.co/">
+                  <img width="40px" src="cclogo.png">
+                </a>
+              </td>
+              <td style="padding-left: 8px;">
+                <a href="https://community-care-homes.ishi3000.repl.co/" style="text-decoration: none;">
+                  <h1 style="font-family:dmReg; color: black; font-size: 20px;"><strong><span style="text-decoration: none; padding: 3px; padding-right: 5px; padding-left: 5px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">CommunityCare</span> Home</strong></h1>
+                </a>
+            </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="columnright">
+      <table>
+        <tr>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Home</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/services.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Services</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/facility.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Facility</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/about.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">About</h1></a>
+          </td>
+          <td>
+            <a href="https://community-care-homes.ishi3000.repl.co/contact.html" style="text-decoration: none;"><h1 class="toc" style="font-family:workReg; font-size: 15px; padding-left: 7px; padding-right: 7px;">Contact</h1></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+    <body style="padding: 10px;">
+    <center>
+      <h1 style="font-family: dmEB; line-height: 1.5; font-size: 45px;"><strong><span style="padding: 3px; padding-right: 8px; padding-left: 8px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 50px; color: white; border: none;">About</span> Us</strong></h1>
+    </center>
+    <!--
+    our culinary journey
+    -->
+    <table>
+      <tr>
+        <td style="width: 50%; background-image: linear-gradient(45deg, #5F79EB, #47D186); padding: 50px; border-radius: 32px;">
+          <h1 style="font-family: dmEB; line-height: 1.5; font-size: 45px; color:#ffff;">Our Loving Journey</h1>
+          <hr style="width:80px; height:1.5px; background-color: #ffff; border: 0; margin-left:0;">
+        </td>
+        <td style="width: 50%; padding: 50px; margin: auto;">
+          <h1 style="font-family: dmEB; line-height: 1.5; font-size: 45px;">Get to Know Us!</h1>
+          <p style="font-family:dmReg; font-size:20px; color:#000000; "><span style="font-family:dmEB;">CommunityCare Home</span> began with a group of caring folks who wanted to create a special place for seniors. We believe that everyone deserves a cozy and supportive home, where their health and happiness are top priorities. Our team, made up of healthcare experts, started this journey to provide more than just medical help. We wanted to build a place where residents feel like part of a big family. Now, our dream has come true, and we're dedicated to giving seniors the best care and a warm community to call home at CommunityCare.</p>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <div width="100%" style="background-image: url('Untitled\ design\ \(15\).png'); background-size: cover; padding: 120px; border-radius: 32px;">
+      <div style="background-color: #ffff; padding: 70px; vertical-align: middle; border-radius: 32px;">
+        <center>
+          <!--
+          mission statement
+          -->
+          <h1 style="font-family: dmEB; line-height: 1.5; font-size: 45px;"><strong>Our <span style="padding: 3px; padding-right: 8px; padding-left: 8px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 50px; color: white; border: none;">Mission</span></strong></h1>
+          <p style="font-family:dmReg; font-size:20px; color:#000000;">At CommunityCare Home, our mission is to create a nurturing and supportive environment where residents feel valued and cherished. Committed to delivering exceptional long-term residential, medical, psychiatric, and therapeutic care services, we strive to enhance the well-being of each individual under our care. Through compassion, expertise, and a dedication to holistic health, we aim to foster a sense of community and belonging, promoting the highest quality of life for all our welcomed residents!</p>
+        </center>
+    </div>
+    <br>
+    <br>
+    </div>
+
+      <!--
+      footer section for logo, name, address, and contact
+      -->
+      <div>
+        <br>
+        <br>
+        <center>
+          <table>
+            <tr>
+              <td>
+                <img width="40px" src="cclogo.png">
+              </td>
+              <td style="padding-left: 5px;">
+                <h1 style="font-family:dmReg; color: #black; font-size: 20px;"><strong><span style="padding: 3px; padding-right: 5px; padding-left: 5px; background-image: linear-gradient(45deg, #5F79EB, #47D186); border-radius: 15px; color: white; border: none;">CommunityCare</span> Home</strong></h1>
+              </td>
+            </tr>
+          </table>
+          <h1 style="font-family:WorkReg; font-size:10px; color:#00000;">©2023 by CommunityCare Home. <br>Proudly a Residential Home Care Service located in Brampton.</h1>
+        </center>
+        <br>
+
+      </div>
+      
+
+  <!--
+  chatbot for customer interactions
+  -->
+  <script src="//code.tidio.co/uobckb2m8do28deydo7dgevmrigm49al.js" async></script>
+
+    <div>
+      <a href="https://community-care-homes.ishi3000.repl.co/apply.html"><button type="button" class="box" style="font-family:WorkEB; font-size:17px; padding: 10px; background-image: none; background-color: white; box-shadow: 4px 2px 12px 1px rgba(0,0,0,0.3); position: fixed; bottom:45px; left:35px; color: #5F79EB;" ><strong>Apply Now</strong></button>
+      </a>
+    </div>
+  
+</body>
+
+</html>
